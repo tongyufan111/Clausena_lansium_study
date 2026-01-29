@@ -5,7 +5,12 @@ The pipeline is designed for **ligand selection**, combining **statistical ML fi
 
 ## Overview of the workflow
 
-ML + Docking screening + Clustering -> Stage 1 MD (20 ns) rapid elimination -> Stage 2 MD (100 ns) intermediate refinement ->Stage 3 MD (500 ns)long-timescale validation -> COM analysis (last 50 ns) -> MM-PBSA / PCA / FEL / QM
+ML + docking screening & clustering  
+→ Stage 1 MD (20 ns): rapid elimination  
+→ Stage 2 MD (100 ns): intermediate refinement  
+→ Stage 3 MD (500 ns): long-timescale validation  
+→ COM analysis (last 50 ns)  
+→ MM-PBSA / PCA / FEL / QM
 
 
 Each stage applies **explicit, quantitative thresholds** to ensure physical interpretability and reproducibility.
@@ -80,7 +85,7 @@ Rapid elimination of unstable complexes using short MD trajectories.
 ### Input structure
 
 ```text
-stage1/
+top30_stage1_data/
 ├── 1/
 │   ├── rmsd_protein*.dat
 │   ├── rg_protein*.dat
