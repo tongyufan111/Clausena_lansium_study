@@ -251,7 +251,7 @@ python complex_vs_apo.py
 ### Output
 
 * RMSD / Rg / SASA / RMSF plots
-* 2×2 NPJ-style composite figure (`.png` / `.tiff`)
+* 2×2 composite figure (`.png` / `.tiff`)
 
 ---
 
@@ -329,7 +329,7 @@ python homo-lumo.py
 
 ### Output
 
-* Two-panel HOMO/LUMO figure (NPJ-style)
+* Two-panel HOMO/LUMO figure 
 
 ---
 
