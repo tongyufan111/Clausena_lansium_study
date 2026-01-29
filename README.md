@@ -5,24 +5,14 @@ The pipeline is designed for **ligand selection**, combining **statistical ML fi
 
 ## Overview of the workflow
 
-ML + Docking screening + Clustering
-        ↓
-Stage 1 MD (20 ns)      – rapid elimination
-        ↓
-Stage 2 MD (100 ns)     – intermediate refinement
-        ↓
-Stage 3 MD (500 ns)     – long-timescale validation
-        ↓
-COM analysis (last 50 ns)
-        ↓
-MM-PBSA / PCA / FEL / QM
+ML + Docking screening + Clustering -> Stage 1 MD (20 ns) rapid elimination -> Stage 2 MD (100 ns) intermediate refinement ->Stage 3 MD (500 ns)long-timescale validation -> COM analysis (last 50 ns) -> MM-PBSA / PCA / FEL / QM
 
 
 Each stage applies **explicit, quantitative thresholds** to ensure physical interpretability and reproducibility.
 
 
 ## Repository structure
-
+```text
 .
 ├── analyze_and_cluster.py     # ML + docking screening & clustering
 ├── analyze_stage1.py          # Stage-1 MD screening (20 ns)
@@ -35,7 +25,7 @@ Each stage applies **explicit, quantitative thresholds** to ensure physical inte
 ├── gbsa.py                    # Per-residue energy decomposition
 ├── homo-lumo.py               # HOMO–LUMO visualization
 └── README.md
-
+```
 
 ## Requirements
 
@@ -89,6 +79,7 @@ Rapid elimination of unstable complexes using short MD trajectories.
 
 ### Input structure
 
+```text
 stage1/
 ├── 1/
 │   ├── rmsd_protein*.dat
@@ -97,7 +88,7 @@ stage1/
 │   └── hb_lig_prot_avg*.dat
 ├── 2/
 └── ...
-
+```
 
 ### Run
 
@@ -127,6 +118,7 @@ Intermediate screening using longer trajectories and stricter structural criteri
 
 ### Input structure
 
+```text
 top12_stage2_data/
 ├── 3/
 │   ├── rmsd_protein*.dat
@@ -136,7 +128,7 @@ top12_stage2_data/
 │   └── hb_PROT_to_LIG_S2_3rep_avg*.dat
 ├── 7/
 └── ...
-
+```
 
 ### Run
 
@@ -169,6 +161,7 @@ Long-timescale validation of binding stability.
 
 ### Input structure
 
+```text
 stage3/
 ├── 3/
 │   ├── rmsd_protein_S4_rep1*.dat
@@ -180,7 +173,7 @@ stage3/
 │   └── hb_PROT_to_LIG_S4_rep1_ts*.dat
 ├── 7/
 └── ...
-
+```
 
 ### Run
 
@@ -207,6 +200,7 @@ Quantitative evaluation of ligand retention in the binding pocket during the equ
 
 ### Input structure
 
+```text
 .
 ├── 3/
 │   ├── lig_pocket_com_last50ns.dat
@@ -214,6 +208,7 @@ Quantitative evaluation of ligand retention in the binding pocket during the equ
 │   └── nc_frame_last50ns.dat
 ├── 7/
 ├── 17/
+```
 
 ### Run
 
@@ -332,15 +327,6 @@ python homo-lumo.py
 * Two-panel HOMO/LUMO figure (NPJ-style)
 
 ---
-
-## Recommended execution order (summary)
-
-analyze_and_cluster.py
-→ analyze_stage1.py (20 ns)
-→ analyze_stage2.py (100 ns)
-→ analyze_stage3.py (500 ns)
-→ COM.py
-→ PBSA / PCA / FEL / QM
 
 
 ## Notes on reproducibility
