@@ -76,10 +76,10 @@ def load_table(infile: Path) -> pd.DataFrame:
     rename_map = {}
     if "smiles" in df.columns: rename_map["smiles"] = "Smiles"
     if "smi"     in df.columns: rename_map["smi"]     = "Smiles"
-    # libdock 各种写法
+    # libdock
     for c in ["libdock_score", "libdockscore"]:
         if c in df.columns: rename_map[c] = "libdock"
-    if "libdock" in df.columns: rename_map["libdock"] = "libdock"  # 原样
+    if "libdock" in df.columns: rename_map["libdock"] = "libdock"
     df = df.rename(columns=rename_map)
 
     return df
