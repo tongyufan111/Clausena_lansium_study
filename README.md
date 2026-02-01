@@ -10,7 +10,7 @@ ML + docking screening & clustering
 → Stage 2 MD (100 ns): intermediate refinement  
 → Stage 3 MD (500 ns): long-timescale validation  
 → COM analysis (last 50 ns)  
-→ MM-PBSA / PCA / FEL / QM
+→ MM-PBSA / MM-GBSA / PCA / FEL / QM 
 
 
 Each stage applies **explicit, quantitative thresholds** to ensure physical interpretability and reproducibility.
