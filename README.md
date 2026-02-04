@@ -103,7 +103,9 @@ python analyze_stage1.py top30_stage1_data
 ```
 
 ### Screening criteria
-
+* Mean Cα-RMSD ≤ 2.5 Å
+* Rg deviation ≤ 3%
+* SASA deviation ≤ 10%
 * Mean H-bond count ≥ **0.70**
 * Main H-bond occupancy ≥ **20%**
 
