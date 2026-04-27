@@ -47,6 +47,7 @@ def compute_metrics_for_folder(folder: Path, dt_ns: float = 0.01) -> dict:
         hb_avg_total = float(fracs.sum())
         hb_main_frac = float(fracs.max())
         hb_num_ge_0_1 = int((fracs >= 0.1).sum())
+    else:   
         hb_avg_total = 0.0
         hb_main_frac = 0.0
         hb_num_ge_0_1 = 0
