@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams.update({
-    'font.family': 'DejaVu Serif',   # replace with 'Times New Roman' if installed
+    'font.family': 'DejaVu Serif', 
     'font.size': 12,
     'axes.titlesize': 18,
     'axes.labelsize': 14,
