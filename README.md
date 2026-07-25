@@ -1,5 +1,3 @@
+## Project Affiliation
 
-This repository provides a **fully reproducible, multi-stage computational workflow** for screening bioactive small molecules using **machine learning, molecular docking, cluster analysis, molecular dynamics simulations, and quantum chemical calculations**.
-
-The pipeline is designed for **ligand selection**, combining **statistical ML filtering**, **structure clustering**, and **progressively stricter MD-based stability criteria**
-
+This project and its associated research outputs belong to the **Min Wang Lab**. The computational workflow, source code, and documentation in this repository were developed within the Min Wang Lab.
